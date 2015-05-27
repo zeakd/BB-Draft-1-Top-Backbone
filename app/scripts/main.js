@@ -3,7 +3,7 @@
 
 require.config({
     shim: {
-
+		bootstrap : { 'deps' :['jquery']}
     },
     paths: {
         jquery: '../bower_components/jquery/dist/jquery',
@@ -27,8 +27,9 @@ require.config({
 require([
     'backbone',
   	'views/app',
-	'routes/app'
-], function (Backbone, AppView, Workspace) {
+	'routes/app',
+	'bootstrap'
+], function (Backbone, AppView, Workspace, bootstrap) {
 	new AppView();
     Backbone.history.start();
 	new Workspace();

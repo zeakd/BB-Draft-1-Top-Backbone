@@ -10,8 +10,11 @@
 <!--		<link rel="stylesheet" href="bower_components/normalize.css/normalize.css">-->
 		<link rel="stylesheet" href="bower_components/wow/css/libs/animate.css">
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+<!--		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">-->
+		<link rel="stylesheet" href="styles/font.css">
+		<link rel="stylesheet" href="styles/bootstrap-beanbrothers.css">
         <link rel="stylesheet" href="styles/main.css">
+		
         <!-- endbuild -->
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
@@ -21,96 +24,169 @@
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+		
+		<!-- #shell start -->
+		<div id = 'shell'>
+			<header id = 'desktop-header' class = 'header navbar navbar-inverse navbar-fixed-top'>
+				<nav class = 'wrapper container'>
+					<div class = 'navbar-header'>
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobile-nav">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href = "/beanbrothers" class = 'logo navbar-brand'>
+							<img class = 'white' src = "images/BEANBROTHERS_white.png">
+							<img class = 'black' src = "images/BEANBROTHERS.png">
+						</a>
+					</div>
+					<ul id = 'left-nav' class = "nav navbar-nav navbar-left collapse navbar-collapse">
+						<li><a class = 'cafe' href = "#">카페</a></li>
+						<li><a class = 'goods'href = "#">상품</a></li>
+						<li><a class = 'subscribe' href = "#">커피구독</a></li>
+						<li><a class = 'guide' href = "#">가이드</a></li>
+						<li><a class = 'class' href = "#">클래스</a></li>                   
+					</ul>
 
+					<ul id = 'right-nav' class = "nav navbar-nav navbar-right collapse navbar-collapse">
+						<li><a class = 'hire' href = "#">채용</a></li>
+						<li><a class = 'business' href = "#">비즈니스</a></li>
+						<li><a class = 'event' href = "#">이벤트</a></li>
+						<li><a class = 'login' href = "#">로그인</a></li>
+						<li><a class = 'cart' href = "#">장바구니</a></li>
+					</ul>
 
-<!--
-        <header id = 'desktop-header' class = 'header hide-on-mobile'>
-            <nav class = 'wrapper'>
-                <a href = "/beanbrothers" class = 'logo'>
-                    <img src = "images/BEANBROTHERS_white.png">
-                </a>
-                <ul id = 'right-nav'>
-                    <li><a class = 'cart' href = "#">장바구니</a></li>
-                    <li><a class = 'login' href = "#">로그인</a></li>
-                    <li><a class = 'event' href = "#">이벤트</a></li>
-                    <li><a class = 'business' href = "#">비즈니스</a></li>
-                    <li><a class = 'hire' href = "#">채용</a></li>
-                </ul>
-                <ul id = 'left-nav'>
-                    <li><a class = 'cafe' href = "#">카페</a></li>
-                    <li><a class = 'goods'href = "#">상품</a></li>
-                    <li><a class = 'subscribe' href = "#">커피구독</a></li>
-                    <li><a class = 'guide' href = "#">가이드</a></li>
-                    <li><a class = 'class' href = "#">클래스</a></li>                   
-                </ul>
-            </nav>
-        </header>
--->
-		<div class="main-container">
-            <div class="main wrapper clearfix">
-				<div class = 'main-grid-bg swiper-container' data-0 = "top : 0px;opacity:1;" data-700 = "top : -200px;opacity:0.5;">
-<!--
-                    <ul class = 'swiper-wrapper'>
-                        <li class = "bg1 swiper-slide" style="background-image: url(images/first_02.jpg);">
-                            <img src = 'images/first_02.jpg' style = "visibility:hidden;width:100%;position:absolute;">
-                            <img class = 'wow fadeIn' src = 'images/first_02_txt_s.png'>
-                        </li>
-                        <li class = "bg2 swiper-slide" style = "background-image: url(images/main_roll_02-2.jpg);">
-                            <img src = 'images/main_roll_02-2.jpg' style = "visibility:hidden;width:100%;position:absolute;">
-                        </li>
-                        <li class = "bg3 swiper-slide" style = "background-image:url(images/main_roll_03-2.jpg);">
-                            <img src = 'images/main_roll_03-2.jpg' style = "visibility:hidden;width:100%;position:absolute;">
-                        </li>
-                    </ul>
--->
-                </div>
-                <div class = 'support-grid container-fluid'>
-                    <div class='main'>
-                        <div class = 'clearfix' id = 'item1'>
-                            <ul class = 'row list-unstyled'>
-                                <li class = 'col-md-4 item-wrapper'>
-                                    <div id = 'item1-1' class = 'wow fadeInUp' data-wow-duration = "0.5s" data-wow-delay = "0.1s" style = "background-image: url(images/first_05.jpg);">
-                                        <img src = 'images/first_05.jpg' style='visibility: hidden;width:100%;'>
+					<ul id = 'mobile-nav' class = "nav navbar-nav navbar-right collapse">
+						<li><a class = 'cafe' href = "#">카페</a></li>
+						<li><a class = 'goods'href = "#">상품</a></li>
+					</ul>
+				</nav>
+			</header>
+			<div id = "main-container">
+				<div class = 'main'>
+					<div id = "banner" class = "swiper-container">
+						
+					</div>
+					<div id = "banner-area"></div>
+					<div id = "paper">
+						<div class = 'wrapper container'>
+							<div id = "news">
+								<ul class = "row">
+									<li class = 'item-wrapper col-xs-12 col-sm-4'>
+										<div id = 'item1-1' class = 'news-item'>
+											<img src = 'images/first_05.jpg'>
+										</div>
+									</li>
+									<li class = 'item-wrapper col-xs-12 col-sm-4'>
+										<div id = 'item1-2' class = 'news-item'>
+											<img src = 'images/first_07.jpg'>
+										</div>
+									</li>
+									<li class = 'item-wrapper col-xs-12 col-sm-4'>
+										<div id = 'item1-3' class = 'news-item'>
+											<img src = 'images/first_09.jpg'>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div id = "hole">
+								<div class = 'hole-bg'></div>
+								<img class = 'hole-text' src = "images/first_15_2.png">
+							</div>
+							<div id = "bulletin" class = "row">
+								<a class = 'bulletin-item col-md-9 col-sm-12 col-xs-12'>
+									<img class = 'bg' src = "images/TEST_01_main_18.jpg">
+	<!--									<img class = 'text' src = "img/TEST_01_png_01_18.png">-->
+								</a>
+								<a class = 'bulletin-item col-md-3 col-sm-12 col-xs-12'>
+									<img class = 'bg' src = "images/TEST_01_main_20-2.jpg">
+	<!--									<img class = 'text' src = "img/TEST_01_png_01_20.png">-->
+								</a>
+								<a class = 'bulletin-item col-md-4 col-sm-12 col-xs-12'>
+									<img class = 'bg' src = "images/TEST_01_main_24-2.jpg">
+	<!--									<img class = 'text' src = "img/TEST_01_png_01_24.png">-->
+								</a>
+								<a class = 'bulletin-item col-md-4 col-sm-12 col-xs-12'>
+									<img class = 'bg' src = "images/TEST_01_main_26-2.jpg">
+	<!--									<img class = 'text' src = "img/TEST_01_png_01_26.png">-->
+								</a>								
+								<a class = 'bulletin-item col-md-4 col-sm-12 col-xs-12'>
+									<img class = 'bg' src = "images/TEST_01_main_28-2.jpg">
+	<!--									<img class = 'text' src = "img/TEST_01_png_01_28.png">-->
+								</a>
+							</div>
+							<div id = "insta">
+								<header class = 'insta-header'>
+									<h1>INSTAGRAM</h1><h2>#BEAN_BROTHERS</h2>
+								</header>
+							</div>
+						</div>
+					</div>
+					<div id = "footer-area"></div>
+				</div><!-- #main -->	
+			</div> <!-- #main-container -->
 
-                                    </div>
-                                </li>
-                                <li class = 'col-md-4 item-wrapper'>
-                                    <div id = 'item1-2' class = 'wow fadeInUp' data-wow-duration = "0.5s" style = "background-image: url(images/first_07.jpg);">
-                                        <img src = 'images/first_07.jpg' style='visibility: hidden;width:100%;'>
-                                    </div>
-                                </li>
-                                <li class = 'col-md-4 item-wrapper'>
-                                    <div id = 'item1-3' class = 'wow fadeInUp' data-wow-duration = "0.5s" data-wow-delay = "0.2s" style = "background-image: url(images/first_09.jpg);">
-                                        <img src = 'images/first_09.jpg' style='visibility: hidden;width:100%;'>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class = 'clearfix container-fluid' id = 'item2'>
-                            <img class = 'hole img-responsive' src = "images/first_15_2.png">
-                            <div class = 'bg'  data-0 = "top : -200px;" data-1400 = "top : -500px;"></div>
-                        </div>
-                        <div class = 'grid-100 grid-parent' id = 'item3'>
-<!--
-                            <div id = 'bulletin'>
-                                <div class="grid-sizer"></div>
-                                <div class="gutter-sizer"></div>
-                                <a class = 'bulletin-item grid-50'><img src = "http://placehold.it/400x200"></a>
-                                <a class = 'bulletin-item grid-50'><img src = "http://placehold.it/400x200"></a>
-                                <a class = 'bulletin-item grid-50'><img src = "http://placehold.it/400x400"></a>
-                                <a class = 'bulletin-item grid-25'><img src = "http://placehold.it/200x400"></a>
-                                <a class = 'bulletin-item grid-25'><img src = "http://placehold.it/200x200"></a>
-                                <a class = 'bulletin-item grid-25'><img src = "http://placehold.it/200x200"></a>
-                                <a class = 'bulletin-item grid-75'><img src = "http://placehold.it/600x200"></a>
-                                <a class = 'bulletin-item grid-25'><img src = "http://placehold.it/200x200"></a>
-                            </div>
--->
-                        </div>
-                    </div>         
-                </div>
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
-        
+			<footer id = 'footer' class = "navbar navbar-default navbar-fixed-bottom">
+				<div class = 'wrapper container'>
+					<div class = "footer-link container-fluid">
+						<ul class = 'row'>
+							<li class = 'col-md-2 col-xs-2'>
+								<a class = 'about icon' href = '#'>
+									<img class = 'out' src = 'images/TEST_01_main_33_1.png'>
+									<img class = 'in' src = 'images/TEST_01_main_33.png'>
+								</a>
+							</li>
+							<li class = 'col-md-2 col-xs-2'>
+								<a class = 'privacy icon'href = '#'>
+									<img class = 'out' src = 'images/TEST_01_main_35_1.png'>
+									<img class = 'in' src = 'images/TEST_01_main_35.png'>
+								</a>
+							</li>
+							<li class = 'col-md-2 col-xs-2'>
+								<a class = 'qna icon' href = '#'>
+									<img class = 'out' src = 'images/TEST_01_main_37_1.png'>
+									<img class = 'in' src = 'images/TEST_01_main_37.png'>
+								</a>
+							</li>
+							<li class = 'col-md-2 col-xs-2'>
+								<a class = 'blog icon' href = '#'>
+									<img class = 'out' src = 'images/TEST_01_main_39_1.png'>
+									<img class = 'in' src = 'images/TEST_01_main_39.png'>
+
+								</a>
+							</li>
+							<li class = 'col-md-2 col-xs-2'>
+								<a class = 'facebook icon' href = '#'>
+									<img class = 'out' src = 'images/TEST_01_main_41_1.png'>
+									<img class = 'in' src = 'images/TEST_01_main_41.png'>
+								</a>
+							</li>
+							<li class = 'col-md-2 col-xs-2'>
+								<a class = 'instagram icon' href = '#'>
+									<img class = 'out' src = 'images/TEST_01_main_43_1.png'>
+									<img class = 'in' src = 'images/TEST_01_main_43.png'>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class = "footer-info">
+						<img class = 'logo' src = 'images/TEST_01_ACG.png'>
+						<h1>(주)에이블커피그룹</h1>
+						<p>대표: 박성호 | 주소: 서울시 마포구 토정로 12, 3층 | 전화번호: 02-6204-7888 | 이메일: info@beanbrothers.co.kr 
+	사업자등록번호: 220-87-84283  |  통신판매업신고번호: 제 2013 서울강남 00744호 | 개인정보보호책임자: 서솔 privacy@beanbrothers.co.kr </p>
+						<h2>
+							ⓒ 2014 BEAN BROTHERS. All rights reserved.
+						</h2>
+
+						<div class = 'line'></div>
+
+					</div>
+				</div>
+			</footer>
+		</div>
+		
+		
+		<!-- #shell end -->
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

@@ -1,8 +1,340 @@
 body {
-    background: #fafafa;
+	font: 'Apple SD Gothic Neo', NanumBarunGothic, '나눔고딕', 'NG', 'Malgun Gothic', dotum, sans-serif;
+}
+#shell {
+	-webkit-transition: opacity 0.5s ease, opacity 0.3s ease;
+	   -moz-transition: opacity 0.5s ease, opacity 0.3s ease;
+		 -o-transition: opacity 0.5s ease, opacity 0.3s ease;
+			transition: opacity 0.5s ease, opacity 0.3s ease;
+	visibility: hidden;
+	opacity: 0;
+}
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+.icon > img{
+	position: relative;
+	width : 100%;
+}	
+.icon > .in,
+.icon > .out{
+	-webkit-transition: all 0.5s ease, opacity 0.3s ease;
+	   -moz-transition: all 0.5s ease, opacity 0.3s ease;
+		 -o-transition: all 0.5s ease, opacity 0.3s ease;
+			transition: all 0.5s ease, opacity 0.3s ease;
+}
+.icon {
+	overflow: hidden;
+}
+.icon > .out {
+/*
+	position: relative;
+	top : 0;
+	display: block;
+	visibility: visible;
+	opacity: 1;
+*/
+	display: block;
+}
+.icon > .in {
+/*
+	
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
+*/
+	display: none;
+}
+.icon:hover > .out {
+	display: none;
+}
+.icon:hover > .in {
+/*
+	position: relative;
+	top : 0;
+	opacity: 1;
+	visibility: visible;
+*/
+	display: block;
 }
 
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
+#desktop-header {
+	font-weight: bold;
+	-webkit-transition: all 0.5s ease, opacity 0.3s ease;
+	   -moz-transition: all 0.5s ease, opacity 0.3s ease;
+		 -o-transition: all 0.5s ease, opacity 0.3s ease;
+			transition: all 0.5s ease, opacity 0.3s ease;
 }
+	#desktop-header .logo {
+        -webkit-transition: all 0.5s ease, opacity 0.3s ease;
+           -moz-transition: all 0.5s ease, opacity 0.3s ease;
+             -o-transition: all 0.5s ease, opacity 0.3s ease;
+                transition: all 0.5s ease, opacity 0.3s ease;
+/*
+        background-image: url(../images/BEANBROTHERS_white.png);
+        background-repeat: no-repeat;
+        background-position: center;
+*/
+        width : 168.75px;
+        position: absolute;
+
+        
+    }
+
+
+#paper {	
+	z-index: 1;
+	position: relative;
+	background-color: white;
+	padding-top : 100px;
+	
+	/* row 가 삐져나온다 */
+	overflow: hidden;
+}
+
+#banner-area,
+#news,
+#hole,
+#bulletin {
+	position: relative;
+}
+
+
+#banner {	
+	z-index: 1;
+	width : 100%;
+	background-color: white;
+	position: absolute;
+	overflow: hidden;
+}
+	#banner,
+	#banner-area {
+		height : 300px;
+	}
+	#banner .wrapper {
+		position: absolute;
+		top : 0; left :0;
+		width : 100%;
+		height : 100%;
+	}
+
+	/* trick */
+	#banner img {
+		position: absolute;
+		top: -9999px;
+		bottom: -9999px;
+		left: -9999px;
+		right: -9999px;
+		margin: auto;
+		
+		width : 778px;
+	}
+	.banner-item {
+		overflow: hidden;
+	}
+	@media (min-width: 768px) {
+		#banner,
+		#banner-area {
+			height : 350px;
+		}
+		#banner img {
+			width : 1200px;
+		}
+	}
+
+	@media (min-width: 992px) {
+		#banner,
+		#banner-area {
+			height : 360px;
+		}
+		#banner img {
+			width : 1600px;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		#banner,
+		#banner-area {
+			height : 400px;
+		}
+		#banner img {
+			width : 120%;
+		}
+	}
+/* #news start */
+
+#news {
+	
+}
+	#news ul {
+		list-style : none;
+		padding: 0;
+	}
+	.news-item {
+		overflow: hidden;
+		height : 200px;
+	}
+	.news-item > img{
+		width : 100%;
+		height : auto;
+	}
+	@media (min-width: 768px) {
+		.news-item {
+			height : 160px;
+		}
+		.news-item > img{
+			width : auto;
+			height : 100%;
+		}
+	}
+
+	@media (min-width: 992px) {
+		.news-item {
+			height : 200px;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.news-item {
+			height : 250px;
+		}
+	}
+
+/* #news end */
+/* #hole start */
+
+#hole {
+	/* do not padding-top. it cause crack. */
+	margin-top : 50px;
+	overflow: hidden;
+}
+	.hole-text {
+		position: relative;
+		width : 100%;
+	}
+	.hole-bg{
+		position: absolute;
+		background: -webkit-linear-gradient(#000, #fff); /* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(#000, #fff); /* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(#000, #fff); /* For Firefox 3.6 to 15 */
+		background: linear-gradient(#000 10%, #fff 90%); /* Standard syntax */
+
+		width : 100%;   
+		height : 900px;
+		top : 0;
+	}
+
+/* #hole end */
+/* #bulletin start */
+#bulletin {
+	padding-top: 50px;
+}
+	.bulletin-item {
+		display: block;	
+		overflow: hidden;
+		padding-top : 10px;
+		padding-bottom: 10px;
+	}
+	.bulletin-item > img {
+		width : 100%;	
+	}
+/* #bulletin end */
+/* #insta start */
+
+#insta {
+	font: 12px/26px BebasNeue;
+	padding-top: 60px;
+	position : relative;
+	min-height : 300px;
+}
+	#insta h1, 
+	#insta h2,
+	#insta h3{
+		margin-right: 0.5em;
+		display: inline-block;
+		font-weight: bold;
+	}
+
+/* #insta end */
+
+/* footer #footer start */
+#footer {
+	z-index: 0;
+	color : white;
+	background-image: none;
+	background-color: #B3AFA6;
+}
+	#footer,
+	#footer-area {
+		height : 600px;
+	}	
+	.footer-link {
+		padding-top : 100px;
+		width : 360px;
+	}
+		.footer-link ul {
+			list-style: none;	
+		}
+		.footer-link .icon {
+			width : 40px;
+			display: inline-block;
+		}	
+
+/*
+	#footer > .wrapper {
+
+		margin: 0 auto;
+	}
+*/
+	.footer-info {
+		padding-top : 50px;
+		color : white;
+		text-align: center;
+	}
+		.footer-info h1{
+			font-size: 1.3em;
+		}
+		.footer-info h2{
+			margin: 0.3em auto;
+			font-size: 1.0em;
+		}
+		.footer-info p{
+			font-size: 1.0em;
+			line-height: 1.3em;
+			margin: 0.3em auto ;
+			padding: 0;
+		}
+
+
+		.footer-info .logo{
+			width : 180px;
+		}
+		.footer-info .line{
+			margin: 1.3em 0;
+			border: 2px solid white;
+		}
+
+	@media (min-width: 768px) {
+		.footer-link {
+			width : 540px;
+		}
+		.footer-link .icon {
+			width : 70px;
+		}	
+	}
+
+	@media (min-width: 992px) {
+		.footer-link {
+			width : 720px;
+		}		
+		.footer-link .icon {
+			width : 100px;
+		}	
+	}
+
+	@media (min-width: 1200px) {
+		#footer > .wrapper {
+			
+		}
+	}
