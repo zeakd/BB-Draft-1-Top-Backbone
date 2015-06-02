@@ -6,11 +6,13 @@ define([
     'backbone',
     'templates',
 	'collections/banner',
+	'collections/instaItem',
 	'views/header',
 	'views/banner',
 	'views/footer',
+	'views/insta',
 	'skrollr'
-], function ($, _, Backbone, JST, BannerCollection, HeaderView, BannerView, FooterView, skrollr) {
+], function ($, _, Backbone, JST, BannerCollection, InstaItemCollection,HeaderView, BannerView, FooterView, InstaView, skrollr) {
     'use strict';
 
     var AppView = Backbone.View.extend({
@@ -19,13 +21,18 @@ define([
         events: {},
 		
         initialize: function () {
-			$(window).on("resize", this.updateCoeff.bind(this));
+			$(window).on("resize", this.updateViews.bind(this));
 			
 			this.bannerResult = new BannerCollection();
+			this.instaItems = new InstaItemCollection();
 			
-			this.headerResultView = new HeaderView();
+			this.headerView = new HeaderView();
 			this.footerResultView = new FooterView();
 			this.bannerResultView = new BannerView({model : this.bannerResult});
+			this.instaView = new InstaView({
+				collection : this.instaItems	
+			});
+			
 			
 			this.render();
 			
@@ -39,12 +46,15 @@ define([
 			
 			
         },
-		updateCoeff: function () {
+		updateViews: function () {
 			this.headerView.updateCoeff();	
+			this.instaView.updateCoeff();
 		},
         render: function () {
 			this.bannerResultView.setElement("#"+this.bannerResultView.el.id).render();
 			this.footerResultView.render();
+			this.instaView.setElement('#insta');
+//			this.$el.append(this.instaView.render().el);
 			this.$el.css('visibility', 'visible');
 			this.$el.css('opacity', 1);
 //            this.$el.html(this.template(this.model.toJSON()));

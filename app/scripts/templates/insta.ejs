@@ -1,0 +1,17 @@
+<header class = 'insta-header'>
+	<h2>#BEAN_BROTHERS</h2>
+</header>
+<ul class = 'wrapper row'>
+<!--
+	<% _.each(instaData, function(instaItem)  { %>
+	<li class = "insta-item <% if( instaItem['likes']['count'] > 70) {%>col-xs-4 col-md-2 item-big<% } else { %>col-xs-2 col-md-1 item-small<% }%>">
+		  <img src = "<%= instaItem['images']['standard_resolution']['url'] %>" >
+	</li>
+<% }); %>
+-->
+	<% _.each(instaData, function(instaItem)  { %>
+	<li class = "insta-item <% if( instaItem['likes']['count'] > 100) {%>col-xs-4 col-md-2 item-big<% } else { %>col-xs-2 col-md-1 item-small<% }%>">
+		  <img src = "<%= instaItem['images']['standard_resolution']['url'] %>" >
+	</li>
+<% }); %>
+</ul> 
