@@ -36,3 +36,21 @@
         url("../fonts/NanumBarunGothicBold.woff") format("woff"),
         url("../fonts/NanumBarunGothicBold.otf") format("opentype");
 }
+@font-face {
+    font-family: "NanumBarunGothic";
+    font-weight : 200;
+    font-style : normal;
+    src: url('../fonts/NanumBarunGothicLight.eot');
+    src: local("☺"),    
+        url("../fonts/NanumBarunGothicLight.woff") format("woff"),
+        url("../fonts/NanumBarunGothicLight.otf") format("opentype");
+}
+@font-face {
+    font-family: "NanumBarunGothic";
+    font-weight: 100;
+    font-style : normal;
+    src: url('../fonts/NanumBarunGothicBoldUltraLight.eot');
+    src: local("☺"),    
+        url("../fonts/NanumBarunGothicBoldUltraLight.woff") format("woff"),
+        url("../fonts/NanumBarunGothicBoldUltraLight.otf") format("opentype");
+}

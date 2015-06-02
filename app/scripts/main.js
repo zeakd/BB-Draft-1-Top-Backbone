@@ -26,7 +26,7 @@ require.config({
         'get-size': '../bower_components/get-size',
         'fizzy-ui-utils': '../bower_components/fizzy-ui-utils',
         eventie: '../bower_components/eventie',
-        eventEmitter: '../bower_components/EventEmitter',
+        eventEmitter: '../bower_components/eventEmitter',
         'get-style-property': '../bower_components/get-style-property',
         'doc-ready': '../bower_components/doc-ready',
         'matches-selector': '../bower_components/matches-selector',

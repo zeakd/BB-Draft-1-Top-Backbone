@@ -250,7 +250,17 @@ module.exports = function (grunt) {
                     ]
                 }
             }
-        }
+        },
+		less: {
+			development: {
+				options: {
+					paths: ["<%= yeoman.app %>/bower_components/bootstrap/less"],
+					yuicompress: true
+				},
+			files: [
+    '<%= yeoman.app %>/bower_components/bootstrap/less/*.less'
+  ]
+		}
     });
 
     grunt.registerTask('createDefaultTemplate', function () {
