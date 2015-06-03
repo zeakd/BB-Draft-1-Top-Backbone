@@ -32,6 +32,15 @@ module.exports = function (grunt) {
                 nospawn: true,
                 livereload: LIVERELOAD_PORT
             },
+			less: {
+				files: [
+					'<%= yeoman.app %>/styles/{,*/}*.less'
+				],	
+				tasks: ['less'],
+				options: {
+					nospawn: true
+				}
+			},
             livereload: {
                 options: {
                     livereload: grunt.option('livereloadport') || LIVERELOAD_PORT
@@ -98,7 +107,8 @@ module.exports = function (grunt) {
         },
         open: {
             server: {
-                path: 'http://localhost:<%= connect.options.port %>'
+                path: 'http://localhost:<%= connect.options.port %>',
+				app : 'Google Chrome'
             },
             test: {
                 path: 'http://localhost:<%= connect.test.options.port %>'
@@ -162,7 +172,13 @@ module.exports = function (grunt) {
             html: ['<%= yeoman.dist %>/{,*/}*.html'],
             css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
             options: {
-                dirs: ['<%= yeoman.dist %>']
+				dirs: ['<%= yeoman.dist %>'],
+				blockReplacements: {
+					less: function (block) {
+						console.log(block);
+						return '<link rel="stylesheet" href="' + block.dest + '">';
+					}
+				}
             }
         },
         imagemin: {
@@ -254,12 +270,18 @@ module.exports = function (grunt) {
 		less: {
 			development: {
 				options: {
-					paths: ["<%= yeoman.app %>/bower_components/bootstrap/less"],
-					yuicompress: true
+					paths: ['<%= yeoman.app %>/styles/*.*']
+//					compress: true
 				},
-			files: [
-    '<%= yeoman.app %>/bower_components/bootstrap/less/*.less'
-  ]
+				files: {
+					'<%= yeoman.dist %>/styles/bootstrap-beanbrothers-theme.css' : '<%= yeoman.app %>/styles/bootstrap-beanbrothers-theme.less'
+				}
+			},
+			compile: {
+                files: {
+                    '.tmp/styles/bootstrap-beanbrothers-theme.css': '<%= yeoman.app %>/styles/bootstrap-beanbrothers-theme.less'
+                }
+            }
 		}
     });
 
@@ -292,6 +314,7 @@ module.exports = function (grunt) {
             'clean:server',
             'createDefaultTemplate',
             'jst',
+			'less:compile',
             'connect:livereload',
             'open:server',
             'watch'
@@ -321,6 +344,7 @@ module.exports = function (grunt) {
         'clean:dist',
         'createDefaultTemplate',
         'jst',
+		'less',
         'useminPrepare',
         'requirejs',
         'imagemin',

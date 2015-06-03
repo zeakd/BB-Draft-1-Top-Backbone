@@ -21,7 +21,7 @@ define([
         events: {},
 		
         initialize: function () {
-			$(window).on("resize", this.updateViews.bind(this));
+			$(window).on('resize', this.updateViews.bind(this));
 			
 			this.bannerResult = new BannerCollection();
 			this.instaItems = new InstaItemCollection();
@@ -51,7 +51,7 @@ define([
 			this.instaView.updateCoeff();
 		},
         render: function () {
-			this.bannerResultView.setElement("#"+this.bannerResultView.el.id).render();
+			this.bannerResultView.setElement('#'+this.bannerResultView.el.id).render();
 			this.footerResultView.render();
 			this.instaView.setElement('#insta');
 //			this.$el.append(this.instaView.render().el);

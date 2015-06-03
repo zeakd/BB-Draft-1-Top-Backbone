@@ -6,7 +6,7 @@ define([
     'backbone',
     'templates',
 	'skrollr'
-], function ($, _, Backbone, JST, skrollr) {
+], function ($, _, Backbone, JST) {
     'use strict';
 
     var BannerView = Backbone.View.extend({

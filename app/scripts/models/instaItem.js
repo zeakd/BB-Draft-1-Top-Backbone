@@ -13,14 +13,15 @@ define([
         },
 
         defaults: {
-        },
-
-        validate: function(attrs, options) {
-        },
-
-        parse: function(response, options)  {
-            return response;
         }
+
+//        validate: function(attrs, options) {
+//
+//        },
+
+//        parse: function(response, options)  {
+//            return response;
+//        }
     });
 
     return InstaItemModel;

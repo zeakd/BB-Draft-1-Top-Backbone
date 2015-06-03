@@ -5,7 +5,7 @@ define([
     'underscore',
     'backbone',
     'templates'
-], function ($, _, Backbone, JST) {
+], function ($, _, Backbone) {
     'use strict';
 
     var HeaderView = Backbone.View.extend({
@@ -17,11 +17,14 @@ define([
 			var self = this;
 			
 			var $window = $(window);
-			var $el = this.$el;
-			var paperTop = this.paperTop;
+			var $el = self.$el;
 			
 			$window.scroll(function(){
-				$window.scrollTop() > self.paperTop	? ($el.removeClass('navbar-inverse').addClass('navbar-default')) : ($el.removeClass('navbar-default').addClass('navbar-inverse'));
+				if($window.scrollTop() > self.paperTop){
+					$el.removeClass('navbar-inverse').addClass('navbar-default');
+				} else {
+					$el.removeClass('navbar-default').addClass('navbar-inverse');
+				}
 			});
         },
 		

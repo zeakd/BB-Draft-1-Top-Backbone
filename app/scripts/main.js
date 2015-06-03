@@ -44,7 +44,7 @@ require([
   	'views/app',
 	'routes/app',
 	'bootstrap'
-], function (Backbone, AppView, Workspace, bootstrap) {
+], function (Backbone, AppView, Workspace) {
 	new AppView();
     Backbone.history.start();
 	new Workspace();

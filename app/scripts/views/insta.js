@@ -9,9 +9,8 @@ define([
 	'collections/instaItem',
 	'masonry',
 	'imagesloaded',
-	'jquery-nested',
 	'jquery-bridget'
-], function ($, _, Backbone, JST, Instatag, InstaItemCollection, Masonry, ImagesLoaded, nested) {
+], function ($, _, Backbone, JST, Instatag, InstaItemCollection, Masonry) {
     'use strict';
 
     var InstaView = Backbone.View.extend({
@@ -32,8 +31,8 @@ define([
 //			$.bridget( 'imagesLoaded', ImagesLoaded );
 			
 			var insta = new Instatag({
-				clientId : "7027c1eb932241d18d7c0c702794a5bb",
-				tags : ["beanbrothers", "빈브라더스"],
+				clientId : '7027c1eb932241d18d7c0c702794a5bb',
+				tags : ['beanbrothers', '빈브라더스'],
 				count : 10,
 				success : function(result){
 					self.collection.reset(result);
@@ -43,17 +42,17 @@ define([
 
 			insta.send();
 
-            this.listenTo(this.collection, 'add', function(instaItem, instaCollection){
-				console.log("add : ", instaItem);	
+            this.listenTo(this.collection, 'add', function(instaItem){
+				console.log('add : ', instaItem);	
 			});
 			this.listenTo(self.collection, 'update', function(instaCollection){
-				console.log("update", JSON.stringify(instaCollection, ["id",'link','created_time'],'\t'));
+				console.log('update', JSON.stringify(instaCollection, ['id','link','created_time'],'\t'));
 			});
 			this.listenTo(self.collection, 'change', function(instaCollection){
-				console.log("change", JSON.stringify(instaCollection, ["id",'link','created_time'],'\t'));
+				console.log('change', JSON.stringify(instaCollection, ['id','link','created_time'],'\t'));
 			});
 			self.listenTo(self.collection, 'reset', function(coll){
-				console.log("reset", coll);	
+				console.log('reset', coll);	
 				self.render();
 			});
 
@@ -71,7 +70,7 @@ define([
 			
 //			if($(self.el).masonry) $(self.el).masonry('destroy');
 			$el.imagesLoaded(function(){
-				var $masonry = $el.find(".wrapper");
+				var $masonry = $el.find('.wrapper');
 				var msnry = $masonry.data('masonry');
 				if(msnry) {
 					$masonry.masonry('reloadItems');			
@@ -96,8 +95,8 @@ define([
 			return this;
         },
 		updateCoeff : function(){
-			var $el = $(self.el);
-			var $masonry = $el.find(".wrapper");
+			var $el = $(this.el);
+			var $masonry = $el.find('.wrapper');
 			$masonry.masonry('reloadItems');	
 		}
     });
