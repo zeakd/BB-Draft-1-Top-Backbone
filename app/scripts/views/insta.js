@@ -26,16 +26,17 @@ define([
 
         initialize: function () {
 			var self = this;
-			
+            
+            self.SATURATION = 120;
 			$.bridget( 'masonry', Masonry );
-//			$.bridget( 'imagesLoaded', ImagesLoaded );
 			
 			var insta = new Instatag({
 				clientId : '7027c1eb932241d18d7c0c702794a5bb',
-				tags : ['beanbrothers', '빈브라더스'],
+				tags : ['beanbrothers', '빈브라더스','bean_brothers'],
 				count : 10,
 				success : function(result){
-					self.collection.reset(result);
+                    self.container = result;
+                    self.collection.reset(self.makeFit(result));
 				}
 			});
 
@@ -65,7 +66,8 @@ define([
 
 			$el.css('visibility', 'hidden');
 			this.$el.html(this.template({
-				instaData : this.collection.toJSON()
+				instaData : this.collection.toJSON(),
+                SATURATION : this.SATURATION
 			}));
 			
 //			if($(self.el).masonry) $(self.el).masonry('destroy');
@@ -98,7 +100,29 @@ define([
 			var $el = $(this.el);
 			var $masonry = $el.find('.wrapper');
 			$masonry.masonry('reloadItems');	
-		}
+		},
+        makeFit : function(data){
+            var self = this;
+            var num = 48;
+            var result = [];
+            $.each(data, function(idx, value){
+                var size;
+                if( value.likes.count > self.SATURATION ){
+                    size = 4;
+                } else {
+                    size = 1;   
+                }
+                num -= size;
+                if(num < 0 ){
+                    return false;
+                } else if (size > 1 && num < 7 ){
+                    return true;   
+                } else {     
+                    result[result.length] = value;  
+                } 
+            });
+            return result;
+        }
     });
 
     return InstaView;

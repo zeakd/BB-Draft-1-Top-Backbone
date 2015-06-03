@@ -12,13 +12,9 @@
 
 .navbar {
   position: relative;
-  min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
-  margin-bottom: @navbar-margin-bottom;
-  border: 1px solid transparent;
-
+  min-height : @navbar-height;
   // Prevent floats from breaking the navbar
   &:extend(.clearfix all);
-
 }
 
 
@@ -29,7 +25,9 @@
 
 .navbar-header {
   &:extend(.clearfix all);
-
+  min-height : @navbar-height;
+  text-align: center;
+  
   @media (min-width: @grid-float-breakpoint) {
     float: left;
   }
@@ -160,8 +158,7 @@
 // Brand/project name
 
 .navbar-brand {
-  float: left;
-  padding: @navbar-padding-vertical @navbar-padding-horizontal;
+  padding: @navbar-brand-padding-vertical @navbar-brand-padding-horizontal;
   font-size: @font-size-large;
   line-height: @line-height-computed;
   height: @navbar-height;
@@ -173,12 +170,13 @@
 
   > img {
     display: block;
+    width : 100%;
   }
 
   @media (min-width: @grid-float-breakpoint) {
     .navbar > .container &,
     .navbar > .container-fluid & {
-      margin-left: -@navbar-padding-horizontal;
+      margin-left: auto;
     }
   }
 }
@@ -191,14 +189,14 @@
 
 .navbar-toggle {
   position: relative;
-  float: right;
-  margin-right: @navbar-padding-horizontal;
+  float: left;
+  margin-left : @navbar-padding-horizontal;
+//  margin-right: @navbar-padding-horizontal;
   padding: 9px 10px;
   .navbar-vertical-align(34px);
   background-color: transparent;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: 1px solid transparent;
-  border-radius: @border-radius-base;
+  border: none;
 
   // We remove the `outline` here, but later compensate by attaching `:hover`
   // styles to `:focus`.
@@ -230,11 +228,13 @@
 
 .navbar-nav {
   margin: (@navbar-padding-vertical / 2) -@navbar-padding-horizontal;
-
+  margin: auto;
+	border : none;
   > li > a {
     padding-top:    10px;
     padding-bottom: 10px;
     line-height: @line-height-computed;
+    text-align: center;
   }
 
   @media (max-width: @grid-float-breakpoint-max) {
@@ -394,13 +394,25 @@
 .navbar-default {
   background-color: @navbar-default-bg;
   border-color: @navbar-default-border;
-
+  
+  
   .navbar-brand {
+    position : absolute;			
+//    float : none;
+    left : 0; right : 0;
+    margin: 0 auto;
+
     color: @navbar-default-brand-color;
     &:hover,
     &:focus {
       color: @navbar-default-brand-hover-color;
       background-color: @navbar-default-brand-hover-bg;
+    }
+    .white {
+      display: inline-block;	
+    }
+    .black {
+      display: none;
     }
   }
 
@@ -527,8 +539,8 @@
 
 .navbar-inverse {
   background-color: @navbar-inverse-bg;
-  border-color: @navbar-inverse-border;
-
+  border-bottom: solid 1px @navbar-inverse-border;
+	
   .navbar-brand {
     color: @navbar-inverse-brand-color;
     &:hover,
@@ -536,8 +548,19 @@
       color: @navbar-inverse-brand-hover-color;
       background-color: @navbar-inverse-brand-hover-bg;
     }
+    .white {
+      display: none;	
+    }
+    .black {
+      display: inline-block;
+    }
+    @media (max-width: @grid-float-breakpoint-max){
+      position : absolute;			
+      left : 0; right : 0;
+      margin: 0 auto;
+    }
   }
-
+  
   .navbar-text {
     color: @navbar-inverse-color;
   }
@@ -634,7 +657,10 @@
       }
     }
   }
-
+  .navbar-left  { .pull-right(); }
+  .inverse-hide {
+    display: none; 
+  }
   .navbar-link {
     color: @navbar-inverse-link-color;
     &:hover {

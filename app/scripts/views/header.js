@@ -9,7 +9,7 @@ define([
     'use strict';
 
     var HeaderView = Backbone.View.extend({
-		el : '#desktop-header',
+		el : '#header',
 
 		initialize: function () {
 			this.updateCoeff();
@@ -21,9 +21,9 @@ define([
 			
 			$window.scroll(function(){
 				if($window.scrollTop() > self.paperTop){
-					$el.removeClass('navbar-inverse').addClass('navbar-default');
-				} else {
 					$el.removeClass('navbar-default').addClass('navbar-inverse');
+				} else {
+					$el.removeClass('navbar-inverse').addClass('navbar-default');
 				}
 			});
         },

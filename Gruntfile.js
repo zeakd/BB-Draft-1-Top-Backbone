@@ -32,16 +32,7 @@ module.exports = function (grunt) {
                 nospawn: true,
                 livereload: LIVERELOAD_PORT
             },
-			less: {
-				files: [
-					'<%= yeoman.app %>/styles/{,*/}*.less'
-				],	
-				tasks: ['less'],
-				options: {
-					nospawn: true
-				}
-			},
-            livereload: {
+                        livereload: {
                 options: {
                     livereload: grunt.option('livereloadport') || LIVERELOAD_PORT
                 },
@@ -54,16 +45,26 @@ module.exports = function (grunt) {
                     'test/spec/**/*.js'
                 ]
             },
+			less: {
+				files: [
+					'<%= yeoman.app %>/styles/{,*/}*.less'
+				],	
+				tasks: ['less'],
+				options: {
+					nospawn: true
+				}
+			},
+
             jst: {
                 files: [
                     '<%= yeoman.app %>/scripts/templates/*.ejs'
                 ],
                 tasks: ['jst']
-            },
-            test: {
-                files: ['<%= yeoman.app %>/scripts/{,*/}*.js', 'test/spec/**/*.js'],
-                tasks: ['test:true']
             }
+//            test: {
+//                files: ['<%= yeoman.app %>/scripts/{,*/}*.js', 'test/spec/**/*.js'],
+//                tasks: ['test:true']
+//            }
         },
         connect: {
             options: {
@@ -259,10 +260,10 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     src: [
-                        '<%= yeoman.dist %>/scripts/{,*/}*.js',
-                        '<%= yeoman.dist %>/styles/{,*/}*.css',
-                        '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
-                        '/styles/fonts/{,*/}*.*',
+//                        '<%= yeoman.dist %>/scripts/{,*/}*.js',
+//                        '<%= yeoman.dist %>/styles/{,*/}*.css',
+//                        '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
+//                        '/styles/fonts/{,*/}*.*',
                     ]
                 }
             }

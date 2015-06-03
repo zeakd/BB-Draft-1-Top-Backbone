@@ -1,5 +1,6 @@
 body {
 	font: 'Apple SD Gothic Neo', NanumBarunGothic, '나눔고딕', 'NG', 'Malgun Gothic', dotum, sans-serif;
+    background-color: #B3AFA6;
 }
 #shell {
 	-webkit-transition: opacity 0.5s ease, opacity 0.3s ease;
@@ -59,14 +60,14 @@ ul {
 	display: block;
 }
 
-#desktop-header {
+.header {
 	font-weight: 200;
 	-webkit-transition: all 0.5s ease, opacity 0.3s ease;
 	   -moz-transition: all 0.5s ease, opacity 0.3s ease;
 		 -o-transition: all 0.5s ease, opacity 0.3s ease;
 			transition: all 0.5s ease, opacity 0.3s ease;
 }
-	#desktop-header .logo {
+	.header .logo {
         -webkit-transition: all 0.5s ease, opacity 0.3s ease;
            -moz-transition: all 0.5s ease, opacity 0.3s ease;
              -o-transition: all 0.5s ease, opacity 0.3s ease;
@@ -146,7 +147,7 @@ ul {
 	@media (min-width: 992px) {
 		#banner,
 		#banner-area {
-			height : 360px;
+			height : 420px;
 		}
 		#banner img {
 			width : 1600px;
@@ -156,7 +157,7 @@ ul {
 	@media (min-width: 1200px) {
 		#banner,
 		#banner-area {
-			height : 400px;
+			height : 500px;
 		}
 		#banner img {
 			width : 120%;
@@ -176,12 +177,12 @@ ul {
 		height : 200px;
 	}
 	.news-item > img{
-		width : 100%;
+        width : 100%;
 		height : auto;
 	}
 	@media (min-width: 768px) {
 		.news-item {
-			height : 160px;
+			height : 200px;
 		}
 		.news-item > img{
 			width : auto;
@@ -191,7 +192,7 @@ ul {
 
 	@media (min-width: 992px) {
 		.news-item {
-			height : 200px;
+			height : 220px;
 		}
 	}
 
@@ -233,12 +234,33 @@ ul {
 	.bulletin-item {
 		display: block;	
 		overflow: hidden;
-		padding-top : 10px;
-		padding-bottom: 10px;
+		margin-top : 10px;
+		margin-bottom: 10px;
+        height : 170px;
+        background-size: cover;
 	}
 	.bulletin-item > img {
 		width : 100%;	
 	}
+  	@media (min-width: 768px) {
+        .bulletin-item {
+            height : 170px;   
+        }
+	}
+
+	@media (min-width: 992px) {
+        .bulletin-item {
+            height : 200px;   
+        }	
+	}
+
+	@media (min-width: 1200px) {
+        .bulletin-item {
+            height : 250px;   
+        }
+	}
+
+
 /* #bulletin end */
 /* #insta start */
 
@@ -249,6 +271,7 @@ ul {
 	min-height : 300px;
 	
 	list-style: none;
+    padding-bottom: 150px;
 
 }
 
