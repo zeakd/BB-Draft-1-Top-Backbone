@@ -36,23 +36,23 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href = "/beanbrothers" class = 'logo navbar-brand'>
+                        <a href = "/" class = 'logo navbar-brand'>
                             <img class = 'white' src = "images/BEANBROTHERS_white.png">
                             <img class = 'black' src = "images/BEANBROTHERS.png">
                         </a>
                     </div>
                     <ul id = 'right-nav' class = "nav navbar-nav navbar-right collapse navbar-collapse">
-                        <li><a class = 'hire inverse-hide' href = "#">채용</a></li>
-                        <li><a class = 'business inverse-hide' href = "#">비즈니스</a></li>
-                        <li><a class = 'event inverse-hide' href = "#">이벤트</a></li>
-                        <li><a class = 'login' href = "#">로그인</a></li>
-                        <li><a class = 'cart inverse-hide' href = "#">장바구니</a></li>
+                        <li><a class = 'hire inverse-hide' href = "/recruit">채용</a></li>
+                        <li><a class = 'business inverse-hide' href = "http://b.beanbrothers.co.kr/">비즈니스</a></li>
+                        <li><a class = 'event inverse-hide' href = "/events">이벤트</a></li>
+                        <li><a class = 'login' href = "/login">로그인</a></li>
+                        <li><a class = 'cart inverse-hide' href = "/cart">장바구니</a></li>
                     </ul>
                     <ul id = 'left-nav' class = "nav navbar-nav navbar-left collapse navbar-collapse">
-                        <li><a class = 'cafe' href = "#">카페</a></li>
-                        <li><a class = 'goods' href = "#">상품</a></li>
-                        <li><a class = 'subscribe inverse-hide' href = "#">커피구독</a></li>
-                        <li><a class = 'guide inverse-hide' href = "#">가이드</a></li>
+                        <li><a class = 'cafe' href = "/cafe">카페</a></li>
+                        <li><a class = 'goods' href = "/product">상품</a></li>
+                        <li><a class = 'subscribe inverse-hide' href = "/subscription">커피구독</a></li>
+                        <li><a class = 'guide inverse-hide' href = "/blog">가이드</a></li>
                         <li><a class = 'class inverse-hide' href = "#">클래스</a></li>                   
                     </ul>
 
@@ -61,19 +61,19 @@
                 <div id = 'mobile-nav' class = "nav navbar-nav collapse container-fluid hidden-md hidden-lg">
                     <div class = 'container'>
                         <ul class = 'row nav navbar-nav'>
-                            <li><a class = 'login col-xs-12 col-sm-6' href = "#">로그인</a></li>
-                            <li><a class = 'cart col-xs-12 col-sm-6' href = "#">장바구니</a></li>
+                            <li><a class = 'login col-xs-12 col-sm-6' href = "/login">로그인</a></li>
+                            <li><a class = 'cart col-xs-12 col-sm-6' href = "/cart">장바구니</a></li>
                         </ul>
                         <hr>
                         <ul class = 'row nav navbar-nav '>
-                            <li><a class = 'cafe col-xs-12 col-sm-6' href = "#">카페</a></li>
-                            <li><a class = 'goods col-xs-12 col-sm-6'href = "#">상품</a></li>
-                            <li><a class = 'subscribe col-xs-12 col-sm-6' href = "#">커피구독</a></li>
-                            <li><a class = 'guide col-xs-12 col-sm-6' href = "#">가이드</a></li>
+                            <li><a class = 'cafe col-xs-12 col-sm-6' href = "/cafe">카페</a></li>
+                            <li><a class = 'goods col-xs-12 col-sm-6'href = "/product">상품</a></li>
+                            <li><a class = 'subscribe col-xs-12 col-sm-6' href = "/subscription">커피구독</a></li>
+                            <li><a class = 'guide col-xs-12 col-sm-6' href = "/blog">가이드</a></li>
                             <li><a class = 'class col-xs-12 col-sm-6' href = "#">클래스</a></li> 
-                            <li><a class = 'hire col-xs-12 col-sm-6' href = "#">채용</a></li>
-                            <li><a class = 'business col-xs-12 col-sm-6' href = "#">비즈니스</a></li>
-                            <li><a class = 'event col-xs-12 col-sm-6' href = "#">이벤트</a></li>
+                            <li><a class = 'hire col-xs-12 col-sm-6' href = "/recruit">채용</a></li>
+                            <li><a class = 'business col-xs-12 col-sm-6' href = "http://b.beanbrothers.co.kr/">비즈니스</a></li>
+                            <li><a class = 'event col-xs-12 col-sm-6' href = "/events">이벤트</a></li>
                         </ul>
                         <hr>
                     </div>
@@ -84,7 +84,14 @@
 			<div id = "main-container">
 				<div class = 'main'>
 					<div id = "banner" class = "swiper-container">
-						
+						<ul class = "swiper-wrapper wrapper">
+                            <li class = "banner-item bg1 swiper-slide">
+                                <a href = '#'>
+                                    <img class = 'bg' src = 'images/banner_01.jpg'>
+                                    <img class = 'text' src = 'images/banner_01_txt.png'>
+                                </a>
+                            </li>
+                        </ul>
 					</div>
 					<div id = "banner-area"></div>
 					<div id = "paper">
@@ -93,55 +100,63 @@
 								<ul class = "row">
 									<li class = 'item-wrapper col-xs-12 col-sm-4'>
 										<div id = 'item1-1' class = 'news-item'>
-											<img src = 'images/first_05.jpg'>
+											<img src = 'images/news_01.jpg'>
 										</div>
 									</li>
 									<li class = 'item-wrapper col-xs-12 col-sm-4'>
 										<div id = 'item1-2' class = 'news-item'>
-											<img src = 'images/first_07.jpg'>
+											<img src = 'images/news_02.jpg'>
 										</div>
 									</li>
 									<li class = 'item-wrapper col-xs-12 col-sm-4'>
 										<div id = 'item1-3' class = 'news-item'>
-											<img src = 'images/first_09.jpg'>
+											<img src = 'images/news_03.jpg'>
 										</div>
 									</li>
 								</ul>
 							</div>
 							<div id = "hole">
-								<div class = 'hole-bg'></div>
-								<img class = 'hole-text' src = "images/first_15_2.png">
+								<div class = 'hole-bg'>
+                                    <img src = 'images/hole-bg.jpg'>
+                                </div>
+								<img class = 'hole-text' src = "images/hole.png">
 							</div>
 							<div id = "bulletin">
                                 <ul class = "row">
                                     <li class = 'col-md-9 col-sm-9 col-xs-12'>
-                                        <a class = 'bulletin-item' style = "background-image:url(images/002.jpg);">
-    <!--									<img class = 'bg' src = "images/002.jpg" style = "background-image:url(images/002.jpg);">-->
-        <!--									<img class = 'text' src = "img/TEST_01_png_01_18.png">-->
+                                        <a class = 'bulletin-item' style = "background-image:url(images/bulletin_001.jpg);">
+                                            <div class = 'text-wrapper'>
+        									   <img class = 'text' src = "images/001_small.png">  
+                                            </div>
                                         </a>
                                     </li>
 								    <li class = 'col-md-3 col-sm-3 col-xs-6'>
-                                        <a class = 'bulletin-item' style = "background-image:url(images/001.jpg);">
-<!--								    	<img class = 'bg' src = "images/001.jpg">-->
-	<!--									<img class = 'text' src = "img/TEST_01_png_01_20.png">-->
+                                        <a class = 'bulletin-item' style = "background-image:url(images/bulletin_002.jpg);">
+                                            <div class = 'text-wrapper'>
+
+										<img class = 'text' src = "images/002_small.png">
+                                            </div>
                                         </a>
                                     </li>
                                     <li class = 'col-md-4 col-sm-4 col-xs-6'>
-                                        <a class = 'bulletin-item' style = "background-image:url(images/003.jpg);">
-<!--									<img class = 'bg' src = "images/003.jpg">-->
-	<!--									<img class = 'text' src = "img/TEST_01_png_01_24.png">-->
+                                        <a class = 'bulletin-item' style = "background-image:url(images/bulletin_003.jpg);">
+                                            <div class = 'text-wrapper'>
+										<img class = 'text' src = "images/003_small.png">
+                                            </div>
                                         </a>
                                     </li>
 								    <li class = 'col-md-4 col-sm-4 col-xs-6'>
-                                        <a class = 'bulletin-item' style = "background-image:url(images/004.jpg);">
-<!--									<img class = 'bg' src = "images/004.jpg">-->
-	<!--									<img class = 'text' src = "img/TEST_01_png_01_26.png">-->
+                                        <a class = 'bulletin-item' style = "background-image:url(images/bulletin_004.jpg);">
+                                            <div class = 'text-wrapper'>
+										<img class = 'text' src = "images/004_small.png">
+                                            </div>
                                         </a>
                                     </li>
                                     <li class = 'col-md-4 col-sm-4 col-xs-6'>
-                                        <a class = 'bulletin-item' style = "background-image:url(images/005.jpg);">
-<!--									<img class = 'bg' src = "images/005.jpg">-->
-	<!--									<img class = 'text' src = "img/TEST_01_png_01_28.png">-->
+                                        <a class = 'bulletin-item' style = "background-image:url(images/bulletin_005.jpg);">
+                                            <div class = 'text-wrapper'>
+										<img class = 'text' src = "images/005_small.png">
+                                            </div>
                                         </a>
                                     </li>
 																
@@ -149,7 +164,10 @@
                                 </ul>
 							</div>
 							<div id = "insta">
-
+                                <header class = 'insta-header'>
+                                    <h2>#BEAN_BROTHERS</h2>
+                                </header>
+                                <img class = 'loading' src = 'images/loading.gif'>
 							</div>
 						</div>
 					</div>

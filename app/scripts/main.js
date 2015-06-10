@@ -7,6 +7,9 @@ require.config({
             deps: [
                 'jquery'
             ]
+        },
+        wow: {
+            exports: 'WOW'   
         }
     },
     paths: {
@@ -35,7 +38,7 @@ require.config({
 		'jquery-nested': '../bower_components/nested/jquery.nested'
     },
     packages: [
-
+        
     ]
 });
 

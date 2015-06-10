@@ -16,12 +16,13 @@ define([
     var InstaView = Backbone.View.extend({
         template: JST['app/scripts/templates/insta.ejs'],
 
-        tagName: 'ul',
-
-        id: 'insta',
-
-        className: 'container',
-
+//        tagName: 'ul',
+//
+//        id: 'insta',
+//
+//        className: 'container',
+        el : '#insta',
+        
         events: {},
 
         initialize: function () {
@@ -39,21 +40,10 @@ define([
                     self.collection.reset(self.makeFit(result));
 				}
 			});
-
-
 			insta.send();
 
-            this.listenTo(this.collection, 'add', function(instaItem){
-				console.log('add : ', instaItem);	
-			});
-			this.listenTo(self.collection, 'update', function(instaCollection){
-				console.log('update', JSON.stringify(instaCollection, ['id','link','created_time'],'\t'));
-			});
-			this.listenTo(self.collection, 'change', function(instaCollection){
-				console.log('change', JSON.stringify(instaCollection, ['id','link','created_time'],'\t'));
-			});
-			self.listenTo(self.collection, 'reset', function(coll){
-				console.log('reset', coll);	
+			self.listenTo(self.collection, 'reset', function(){
+				
 				self.render();
 			});
 
@@ -63,40 +53,34 @@ define([
 			
 			var self = this;
 			var $el = $(self.el);
-
-			$el.css('visibility', 'hidden');
-			this.$el.html(this.template({
+          
+			$el.append(this.template({
 				instaData : this.collection.toJSON(),
                 SATURATION : this.SATURATION
 			}));
+            var $wrapper = $el.children('.wrapper');  
+            $wrapper.hide();
+            var $loading = $el.children('.loading');
 			
 //			if($(self.el).masonry) $(self.el).masonry('destroy');
 			$el.imagesLoaded(function(){
-				var $masonry = $el.find('.wrapper');
+				var $masonry = $wrapper;
+                $masonry.fadeIn();
+                $loading.hide();
 				var msnry = $masonry.data('masonry');
 				if(msnry) {
 					$masonry.masonry('reloadItems');			
 				}
 				$masonry.masonry({
-//					gutter : 10, // bootstrap row
-
-//					columnWidth: 100,
 					itemSelector : '.insta-item',
 					columnWidth: '.item-small'
 				});
-//				var msnry = $(self.el).data('masonry');
-//				$masonry.nested({
-//					selector: '.insta-item',
-//					minWidth : 100,
-//					gutter : 5,
-//					animate : true
-//				});
-				$el.css('visibility', 'visible');
+                
 			});
 			
 			return this;
         },
-		updateCoeff : function(){
+		updateView : function(){
 			var $el = $(this.el);
 			var $masonry = $el.find('.wrapper');
 			$masonry.masonry('reloadItems');	

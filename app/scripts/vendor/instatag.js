@@ -52,7 +52,7 @@
 			  url: url,
 			  data: instaParams,
 			  success: function(response) {
-				  console.log("Ajax response", response);
+//				  console.log("Ajax response", response);
 				  self.data = $.merge(self.data, response.data);
 			  }
 			});
@@ -60,7 +60,7 @@
 		$.when.apply($, self.requests).done(function(){
 			self.data = self.data.sortWithUniq(cmp.recent);
 			self.opts.success(self.data);	
-			console.log("all done", self.data);
+//			console.log("all done", self.data);
 //			$.each(self.data, function(idx, val){
 //				console.log("create time " + idx+ " : ", val["created_time"]);
 //			})

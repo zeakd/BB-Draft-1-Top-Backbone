@@ -7,8 +7,12 @@ body {
 	   -moz-transition: opacity 0.5s ease, opacity 0.3s ease;
 		 -o-transition: opacity 0.5s ease, opacity 0.3s ease;
 			transition: opacity 0.5s ease, opacity 0.3s ease;
+/*    display: none;*/
+/*
 	visibility: hidden;
 	opacity: 0;
+*/
+    -webkit-transform: translate3d(0,0,0);
 }
 ul {
 	list-style: none;
@@ -216,22 +220,28 @@ ul {
 	}
 	.hole-bg{
 		position: absolute;
+        overflow: hidden;
 		background: -webkit-linear-gradient(#000, #fff); /* For Safari 5.1 to 6.0 */
 		background: -o-linear-gradient(#000, #fff); /* For Opera 11.1 to 12.0 */
 		background: -moz-linear-gradient(#000, #fff); /* For Firefox 3.6 to 15 */
 		background: linear-gradient(#000 10%, #fff 90%); /* Standard syntax */
 
 		width : 100%;   
-		height : 900px;
+/*		height : 900px;*/
 		top : 0;
 	}
-
+    .hole-bg img{
+        top : 0;
+        width : 100%;
+        position: relative;
+    }
 /* #hole end */
 /* #bulletin start */
 #bulletin {
 	padding-top: 50px;
 }
 	.bulletin-item {
+        position: relative;
 		display: block;	
 		overflow: hidden;
 		margin-top : 10px;
@@ -239,9 +249,32 @@ ul {
         height : 170px;
         background-size: cover;
 	}
+/*
 	.bulletin-item > img {
 		width : 100%;	
 	}
+*/
+    .bulletin-item .text-wrapper:hover {
+        background-color: rgba(0,0,0, 0.7);   
+    }
+    .bulletin-item .text-wrapper {
+        width : 100%;
+        height : 100%;
+        -webkit-transition: all 0.3s ease, opacity 0.3s ease;
+           -moz-transition: all 0.3s ease, opacity 0.3s ease;
+             -o-transition: all 0.3s ease, opacity 0.3s ease;
+                transition: all 0.3s ease, opacity 0.3s ease;
+        background-color: rgba(70,70,70, 0.7);
+    }
+    .bulletin-item .text{
+        height : 40%;
+        top : -9999px;
+        bottom : -9999px;
+        left : -9999px;
+        right : -9999px;
+        margin: auto;
+        position: absolute;
+    }   
   	@media (min-width: 768px) {
         .bulletin-item {
             height : 170px;   
@@ -266,20 +299,24 @@ ul {
 
 #insta {
 	font: 12px/26px BebasNeue;
-	padding-top: 60px;
+	margin-top: 60px;
 	position : relative;
 	min-height : 300px;
 	
 	list-style: none;
-    padding-bottom: 150px;
-
+    margin-bottom: 150px;
 }
-
+    
 	#insta.container, 
 	#insta.container-fluid {
 		padding-left: 5px;
 		padding-right: 5px;
 	}
+    #insta .loading {
+        position: absolute;
+        top:0; bottom: 0; left: 0; right: 0;
+        margin: auto;
+    }
 	#insta .row {
 		margin-left : -5px;
 		margin-right : -5px;

@@ -32,7 +32,7 @@ module.exports = function (grunt) {
                 nospawn: true,
                 livereload: LIVERELOAD_PORT
             },
-                        livereload: {
+            livereload: {
                 options: {
                     livereload: grunt.option('livereloadport') || LIVERELOAD_PORT
                 },
