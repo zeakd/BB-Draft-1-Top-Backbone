@@ -60,10 +60,10 @@
 		$.when.apply($, self.requests).done(function(){
 			self.data = self.data.sortWithUniq(cmp.recent);
 			self.opts.success(self.data);	
-//			console.log("all done", self.data);
-//			$.each(self.data, function(idx, val){
-//				console.log("create time " + idx+ " : ", val["created_time"]);
-//			})
+			console.log("all done", self.data);
+			$.each(self.data, function(idx, val){
+				console.log("create time " + idx+ " : ", val["created_time"]);
+			})
 			
 		})
 	};

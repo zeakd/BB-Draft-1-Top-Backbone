@@ -28,7 +28,7 @@ define([
         initialize: function () {
 			var self = this;
             
-            self.SATURATION = 120;
+            self.SATURATION = 100;
 			$.bridget( 'masonry', Masonry );
 			
 			var insta = new Instatag({
@@ -37,13 +37,12 @@ define([
 				count : 10,
 				success : function(result){
                     self.container = result;
-                    self.collection.reset(self.makeFit(result));
+                    self.updateView.apply(self);
 				}
 			});
 			insta.send();
 
 			self.listenTo(self.collection, 'reset', function(){
-				
 				self.render();
 			});
 
@@ -53,7 +52,7 @@ define([
 			
 			var self = this;
 			var $el = $(self.el);
-          
+            $el.children('.wrapper').remove();
 			$el.append(this.template({
 				instaData : this.collection.toJSON(),
                 SATURATION : this.SATURATION
@@ -69,7 +68,7 @@ define([
                 $loading.hide();
 				var msnry = $masonry.data('masonry');
 				if(msnry) {
-					$masonry.masonry('reloadItems');			
+//					$masonry.masonry('reloadItems');			
 				}
 				$masonry.masonry({
 					itemSelector : '.insta-item',
@@ -81,29 +80,50 @@ define([
 			return this;
         },
 		updateView : function(){
-			var $el = $(this.el);
-			var $masonry = $el.find('.wrapper');
-			$masonry.masonry('reloadItems');	
-		},
-        makeFit : function(data){
             var self = this;
-            var num = 48;
+//			var $el = $(this.el);
+//			var $masonry = $el.find('.wrapper');
+//			$masonry.masonry('reloadItems');
+            if($(window).width() < 767){
+                self.collection.reset(self.makeFit(self.container, 24));  
+            } else {
+                self.collection.reset(self.makeFit(self.container, 48));  
+            }
+            
+		},
+        makeFit : function(data, count){
+            var self = this;
             var result = [];
             $.each(data, function(idx, value){
                 var size;
-                if( value.likes.count > self.SATURATION ){
+                if( value.likes.count > self.SATURATION && count > 11){
                     size = 4;
+                    value.putViewSize = 'big';
                 } else {
                     size = 1;   
+                    value.putViewSize = 'small';
                 }
-                num -= size;
-                if(num < 0 ){
-                    return false;
-                } else if (size > 1 && num < 7 ){
-                    return true;   
-                } else {     
-                    result[result.length] = value;  
-                } 
+                count -= size;
+                if(count < 0){
+                    return false;   
+                } else {
+                    result[result.length] = value;   
+                }
+//                var size;
+//                if( value.likes.count > self.SATURATION ){
+//                    size = 4;
+//                } else {
+//                    size = 1;   
+//                }
+//                num -= size;
+//                if(num < 0 ){
+//                    return false;
+//                } else if (size > 1 && num < 7 ){
+//                    return true;   
+//                } else {     
+//                    result[result.length] = value;  
+//                } 
+//                
             });
             return result;
         }

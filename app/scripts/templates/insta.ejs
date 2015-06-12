@@ -3,10 +3,10 @@
 	<% _.each(instaData, function(instaItem)
               { %>
 	<li class = "insta-item <% 
-                 if( instaItem['likes']['count'] > SATURATION) { 
-                 %> col-xs-4 col-md-2 item-big">
+                 if( instaItem['putViewSize'] === 'big') { 
+                 %> col-xs-8 col-sm-4 col-md-2 item-big">
         <img src = "<%= instaItem['images']['low_resolution']['url'] %>"><%
-                 } else { %> col-xs-2 col-md-1 item-small">
+                 } else { %> col-xs-4 col-sm-2 col-md-1 item-small">
         <img src = "<%= instaItem['images']['thumbnail']['url'] %>" ><% 
                  }%>
 	</li>

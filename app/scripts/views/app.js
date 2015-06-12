@@ -21,12 +21,12 @@ define([
             var self = this;
             
             var $el = $(self.el);
-            var $paper = self.$paper = $el.find('#paper');
+            self.$paper = $el.find('#paper');
             
             self.paperTop = self.$paper.offset().top - 50;
             
             var $header = $el.children('#header');
-            var $footer = $el.children('#footer');
+//            var $footer = $el.children('#footer');
             var $banner = $el.find('#banner');
             var $holeBg = $el.find('.hole-bg');
             
@@ -49,27 +49,26 @@ define([
 //                $el.css('visibility', 'visible');
 //                $el.css('opacity', 1);
                 $el.fadeIn();
-                this.instaItems = new InstaItemCollection();
-                this.instaView = new InstaView({
-                    collection : this.instaItems	
+                self.instaItems = new InstaItemCollection();
+                self.instaView = new InstaView({
+                    collection : self.instaItems	
                 });
             });
             // #footer init
             
-            var footerHeight = $footer.height();
-			var footerSkrollrStart = $paper.height() + $paper.offset().top - footerHeight; 
-			$footer.attr('data-' + footerSkrollrStart, 'bottom : -100px;opacity:0.5;');
-			$footer.attr('data-' + (footerSkrollrStart + footerHeight), 'bottom : 0px;opacity:1;');
+//            var footerHeight = $footer.height();
+//			var footerSkrollrStart = $paper.height() + $paper.offset().top - footerHeight; 
+//			$footer.attr('data-' + footerSkrollrStart, 'opacity:0.5;');
+//			$footer.attr('data-' + (footerSkrollrStart + footerHeight), 'opacity:1;');
             			
             // #banner init
             var $bannerWrapper = $banner.children('.wrapper');
             
             
             $bannerWrapper.attr('data-0', 'top : 0px;opacity:1;');
-			$bannerWrapper.attr('data-700', 'top : 300px;opacity:0.5;');
+			$bannerWrapper.attr('data-700', 'top : -100px;opacity:0.5;');
 
             var $newsItems = $el.find('.news-item');
-            
             function random(arr){
                 for( var i = arr.length -1 ; i > 0; --i){
                     var randI = Math.floor(Math.random() * ( i + 1));

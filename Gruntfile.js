@@ -50,9 +50,9 @@ module.exports = function (grunt) {
 					'<%= yeoman.app %>/styles/{,*/}*.less'
 				],	
 				tasks: ['less'],
-				options: {
-					nospawn: true
-				}
+//				options: {
+//					nospawn: true
+//				}
 			},
 
             jst: {
@@ -60,7 +60,7 @@ module.exports = function (grunt) {
                     '<%= yeoman.app %>/scripts/templates/*.ejs'
                 ],
                 tasks: ['jst']
-            }
+            },
 //            test: {
 //                files: ['<%= yeoman.app %>/scripts/{,*/}*.js', 'test/spec/**/*.js'],
 //                tasks: ['test:true']
@@ -158,8 +158,16 @@ module.exports = function (grunt) {
                     // http://requirejs.org/docs/errors.html#sourcemapcomments
                     preserveLicenseComments: false,
                     useStrict: true,
-                    wrap: true
-                    //uglify2: {} // https://github.com/mishoo/UglifyJS2
+                    wrap: true,
+//                    uglify2: {
+//                        output: {
+//                            beautify: true
+//                        },
+//                        beautify: {
+//                            semicolons: false   
+//                        }                    
+//                    }
+                    // https://github.com/mishoo/UglifyJS2
                 }
             }
         },
@@ -187,7 +195,8 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.app %>/images',
-                    src: '{,*/}*.{png,jpg,jpeg}',
+//                    src: '{,*/}*.{png,jpg,jpeg}',
+                    src: '*.{png,jpg,jpeg}',
                     dest: '<%= yeoman.dist %>/images'
                 }]
             }
@@ -196,11 +205,12 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     '<%= yeoman.dist %>/styles/main.css': [
-                        '.tmp/styles/{,*/}*.css',
+//                        '.tmp/styles/{,*/}*.css',
                         '<%= yeoman.app %>/styles/{,*/}*.css'
                     ]
                 }
             }
+
         },
         htmlmin: {
             dist: {

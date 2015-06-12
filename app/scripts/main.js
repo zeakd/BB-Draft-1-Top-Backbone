@@ -9,7 +9,12 @@ require.config({
             ]
         },
         wow: {
-            exports: 'WOW'   
+            exports: 'WOW'
+        },
+        'bootstrap-hover-dropdown': {
+            deps: [
+                'jquery'
+            ]
         }
     },
     paths: {
@@ -24,7 +29,6 @@ require.config({
         bootstrap: '../bower_components/bootstrap/dist/js/bootstrap',
         skrollr: '../bower_components/skrollr/src/skrollr',
         wow: '../bower_components/wow/dist/wow',
-        swiper: '../bower_components/swiper/dist/js/swiper',
         outlayer: '../bower_components/outlayer',
         'get-size': '../bower_components/get-size',
         'fizzy-ui-utils': '../bower_components/fizzy-ui-utils',
@@ -35,10 +39,12 @@ require.config({
         'matches-selector': '../bower_components/matches-selector',
         'jquery-bridget': '../bower_components/jquery-bridget/jquery.bridget',
         imagesloaded: '../bower_components/imagesloaded/imagesloaded',
-		'jquery-nested': '../bower_components/nested/jquery.nested'
+        'jquery-nested': '../bower_components/nested/jquery.nested',
+        'bootstrap-hover-dropdown': '../bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown',
+        swiper: '../bower_components/swiper/dist/js/swiper'
     },
     packages: [
-        
+
     ]
 });
 
@@ -46,7 +52,8 @@ require([
     'backbone',
   	'views/app',
 	'routes/app',
-	'bootstrap'
+	'bootstrap',
+    'bootstrap-hover-dropdown'
 ], function (Backbone, AppView, Workspace) {
 	new AppView();
     Backbone.history.start();
